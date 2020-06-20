@@ -27,13 +27,13 @@ namespace GradeBook.GradeBooks
                     studentsAboveGrade++;
             }
 
-            if (studentsAboveGrade >= nbrStudents * 0.2)
+            if (studentsAboveGrade <= nbrStudents * 0.2)
                 return 'A';
-            else if (studentsAboveGrade >= nbrStudents * 0.4)
+            else if (studentsAboveGrade <= nbrStudents * 0.4)
                 return 'B';
-            else if (studentsAboveGrade >= nbrStudents * 0.6)
+            else if (studentsAboveGrade <= nbrStudents * 0.6)
                 return 'C';
-            else if (studentsAboveGrade >= nbrStudents * 0.8)
+            else if (studentsAboveGrade <= nbrStudents * 0.8)
                 return 'D';
 
             return 'F';
