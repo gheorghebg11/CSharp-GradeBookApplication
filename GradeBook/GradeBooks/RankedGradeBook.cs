@@ -20,20 +20,20 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
 
-            int studentsAboveGrade = 0;
+            int studentsBelowGrade = 0;
             foreach(Student student in Students)
             {
-                if (student.AverageGrade > averageGrade)
-                    studentsAboveGrade++;
+                if (student.AverageGrade < averageGrade)
+                    studentsBelowGrade++;
             }
 
-            if (studentsAboveGrade <= nbrStudents * 0.2)
+            if (studentsBelowGrade >= nbrStudents * 0.8)
                 return 'A';
-            else if (studentsAboveGrade <= nbrStudents * 0.4)
+            else if (studentsBelowGrade >= nbrStudents * 0.6)
                 return 'B';
-            else if (studentsAboveGrade <= nbrStudents * 0.6)
+            else if (studentsBelowGrade >= nbrStudents * 0.4)
                 return 'C';
-            else if (studentsAboveGrade <= nbrStudents * 0.8)
+            else if (studentsBelowGrade >= nbrStudents * 0.2)
                 return 'D';
 
             return 'F';
